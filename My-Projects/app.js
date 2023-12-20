@@ -1,6 +1,8 @@
-const PLAYER_X_CLASS = 'x'
-const PLAYER_O_CLASS = 'o'
-const WINNING_COMBINATIONS = [
+const LOOKUP = {
+    "1": "x",
+    "-1": "o",
+}
+const combos = [
 	[0, 1, 2],
 	[3, 4, 5],
 	[6, 7, 8],
@@ -9,77 +11,52 @@ const WINNING_COMBINATIONS = [
 	[2, 5, 8],
 	[0, 4, 8],
 	[2, 4, 6]
-]
-const boxElements = document.querySelectorAll('[data-box]')
-const boardElement = document.getElementById('board')
-const winningMessageElement = document.getElementById('winningMessage')
-const restartButton = document.getElementById('restartButton')
-const winningMessageTextElement = document.getElementById('winningMessageText')
-let isPlayer_O_Turn = false
+];
+let board;
+let turn;
+let winner;
 
-startGame()
 
-restartButton.addEventListener('click', startGame)
+const boardEl = document.getElementById("board");
 
-function startGame() {
-	isPlayer_O_Turn = false
-	boxElements.forEach(box => {
-		box.classList.remove(PLAYER_X_CLASS)
-		box.classList.remove(PLAYER_O_CLASS)
-		box.removeEventListener('click', handleBoxClick)
-		box.addEventListener('click', handleBoxClick, { once: true })
-	})
-	setBoardHoverClass()
-	winningMessageElement.classList.remove('show')
+boardEl.addEventListener("click", handleClick);
+
+init();
+function init() {
+    board = [null, null, null, null, null, null, null, null, null];
+    turn = 1
+    winner = null;
 }
 
-function handleBoxClick(e) {
-	const box = e.target
-	const currentClass = isPlayer_O_Turn ? PLAYER_O_CLASS : PLAYER_X_CLASS
-	placeMark(box, currentClass)
-	if (checkWin(currentClass)) {
-		endGame(false)
-	} else if (isDraw()) {
-		endGame(true)
-	} else {
-		swapTurns()
-		setBoardHoverClass()
-	}
+function handleClick(evt) {
+    if(board[parseInt(evt.target.id)]   ||
+    winner) return;
+
+    board[parseInt(evt.target.id)] = turn;
+    turn *= -1;
+    winner = checkWinner();
+    render()
 }
 
-function endGame(draw) {
-    if (draw) {
-        winningMessageTextElement.innerText = "Scratch Game!"
-    } else {
-        winningMessageTextElement.innerText = `Player with ${isPlayer_O_Turn ? "O's" : "X's"} wins!`
+function render() {
+    for (let i = 0; i < board.length; i++) {
+        if(board[i]) {
+            const box = document.getElementById(i);
+            box.innerHTML = `${LOOKUP[board[i]]}`;
+        }
     }
-    winningMessageElement.classList.add('add')
-}
-function isDraw() {
-	return [...boxElements].every(box => {
-		return box.classList.contains(PLAYER_X_CLASS) || box.classList.contains(PLAYER_O_CLASS)
-	})
-}
-function placeMark(box, currentClass) {
-	box.classList.add(currentClass)
 }
 
-function swapTurns() {
-	isPlayer_O_Turn = !isPlayer_O_Turn
-}
-function setBoardHoverClass() {
-	boardElement.classList.remove(PLAYER_X_CLASS)
-	boardElement.classList.remove(PLAYER_O_CLASS)
-	if (isPlayer_O_Turn) {
-		boardElement.classList.add(PLAYER_O_CLASS)
-	} else {
-		boardElement.classList.add(PLAYER_X_CLASS)
-	}
-}
-function checkWin(currentClass) {
-	return WINNING_COMBINATIONS.some(combination => {
-		return combination.every(index => {
-			return boxElements[index].classList.contains(currentClass)
-		})
-	})
+function checkWinner() {
+
+    for (let i= 0; i < combos.length; i++) {
+       
+        sum = Math.abs(board[combos[i][0]] + board[combos[i][1]] + board[combos[i][2]]);
+        if (sum === 3) return board[combos[i][0]];
+        
+    }
+
+    if (!board.includes(null)) return "TIE GAME!";
+
+    return null;
 }
