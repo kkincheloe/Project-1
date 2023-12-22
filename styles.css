@@ -4,6 +4,8 @@
 body {
     background-image: url('https://cdn.kinandcarta.com/-/media-assets/images/kincarta/insights/2022/04/the-coding-diaries/coding_diaries_hero.jpg?as=0&iar=0&w=1200&rev=d713103ce2664668b095b5f030015c75&hash=97C15C72070680B33FCA38B177156AE2');
     color: white;
+    margin: 2px;
+    padding: 2px;
 }
 
 html {
@@ -35,6 +37,7 @@ html {
     background-color: black;
     border: 4px solid orange;
     border-radius: 20px;
+    width: 700px;
     
     
 }
@@ -121,6 +124,9 @@ html {
     background-repeat: no-repeat;
     float: right;
     border: 7px solid skyblue
+}
+.box {
+    margin-top: -10px;
 }
 
 .insta-button {
