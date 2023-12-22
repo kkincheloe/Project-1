@@ -38,3 +38,42 @@ body {
     margin: 10px;
     text-align: center;
 }
+
+.header {
+    padding: 50px;
+    text-align: center;
+    
+}
+
+.modal {
+    display: none;
+    position: fixed;
+}
+
+.modal-content {
+    background-color: tan;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 3px solid white;
+}
+
+.close {
+    cursor: pointer;
+}
+
+#myBtn {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    height: 30px;
+    font-size: 22px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 7px;
+}
+
+.title {
+    margin-left: 10px;
+    text-decoration: underline;
+}

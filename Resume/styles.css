@@ -1,0 +1,18 @@
+.button {
+    font-size: 32px;
+}
+
+p {
+    font-size: 26px;
+}
+
+body {
+    background-image: url('https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-3508.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+button {
+    cursor: pointer;
+    height: 30px;
+}

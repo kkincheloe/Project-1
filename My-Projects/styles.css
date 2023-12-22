@@ -5,15 +5,37 @@ body {
     background-color: aqua;
 }
 
+html,body {
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+    font-family: 'Abril Fatface', serif;
+    font-size: 80px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player {
+    font-size: 60px;
+    background-color: white;
+    width: 17.5%;
+    border: 3px solid black;
+    border-radius: 12px;
+}
+
 #board {
-	width: 100vw;
-	height: 100vh;
+	
 	display: grid;
 	justify-content: center;
 	align-content: center;
 	justify-items: center;
 	align-items: center;
 	grid-template-columns: repeat(3, auto);
+    font-size: 100px;
+    font-family: 'DM Sans', sans-serif;
     
 }
 .box {
@@ -29,3 +51,22 @@ body {
     color: white;
 }
 
+#restartButton {
+    margin-left: 795px;
+    cursor: pointer;
+    margin-top: 40px;
+    width: 120px;
+    height: 60px;
+    font-size: 22px;
+}
+
+button {
+    cursor: pointer;
+    height: 30px;
+    
+}
+
+nav {
+    margin-top: 10px;
+    
+}

@@ -16,16 +16,20 @@ let board;
 let turn;
 let winner;
 
+const restartButton = document.getElementById('restartButton')
 
 const boardEl = document.getElementById("board");
 
 boardEl.addEventListener("click", handleClick);
+
+restartButton.addEventListener("click", init);
 
 init();
 function init() {
     board = [null, null, null, null, null, null, null, null, null];
     turn = 1
     winner = null;
+    render()
 }
 
 function handleClick(evt) {
@@ -40,11 +44,13 @@ function handleClick(evt) {
 
 function render() {
     for (let i = 0; i < board.length; i++) {
+        const box = document.getElementById(i);
         if(board[i]) {
-            const box = document.getElementById(i);
             box.innerHTML = `${LOOKUP[board[i]]}`;
+        } else {
+            box.innerHTML = '';
         }
-    }
+    } 
 }
 
 function checkWinner() {
