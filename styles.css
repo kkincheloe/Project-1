@@ -8,6 +8,10 @@ body {
     padding: 2px;
 }
 
+nav {
+    margin: -40px;
+}
+
 html {
     height: 100%;
     margin: 50px;
