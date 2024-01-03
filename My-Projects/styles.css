@@ -21,7 +21,7 @@ html,body {
 .player {
     font-size: 60px;
     background-color: white;
-    width: 17.5%;
+    width: 55%;
     border: 3px solid black;
     border-radius: 12px;
 }
@@ -52,7 +52,7 @@ html,body {
 }
 
 #restartButton {
-    margin-left: 795px;
+    margin-left: 50%;
     cursor: pointer;
     margin-top: 40px;
     width: 120px;

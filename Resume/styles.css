@@ -10,6 +10,7 @@ body {
     background-image: url('https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-3508.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100%;
 }
 
 button {
