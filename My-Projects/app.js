@@ -16,6 +16,9 @@ let board;
 let turn;
 let winner;
 
+const playerOne = $('#playerOne')
+const playerTwo = $('#playerTwo')
+
 const restartButton = document.getElementById('restartButton')
 
 const boardEl = document.getElementById("board");
@@ -65,4 +68,11 @@ function checkWinner() {
     if (!board.includes(null)) return "TIE GAME!";
 
     return null;
+
+}
+
+let outcome
+if (playerOne === playerTwo) {
+    stats.ties++
+    outcome = 'cat game'
 }

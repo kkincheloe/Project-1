@@ -21,9 +21,10 @@ html,body {
 .player {
     font-size: 60px;
     background-color: white;
-    width: 55%;
+    width: 35%;
     border: 3px solid black;
     border-radius: 12px;
+
 }
 
 #board {
@@ -69,4 +70,29 @@ button {
 nav {
     margin-top: 10px;
     
+}
+
+
+.scoreboard {
+    
+    
+    height: 250px;
+    margin-bottom: 200px;
+   
+    border-radius: 10px;
+}
+
+#xwins {
+    text-align: center;
+    margin: 5px;
+}
+#owins {
+    text-align: center;
+}
+
+#playerOne {
+    font-size: 50px;
+}
+#playerTwo {
+    font-size: 50px;
 }

@@ -11,7 +11,7 @@ button {
 }
 
 @media (max-width: 600px) {
-    #bio {
+    body {
         flex-direction: column;
     }
 }
