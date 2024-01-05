@@ -1,4 +1,4 @@
-kkincheloe.github.io/Project-1/
+<a href="https://kkincheloe.github.io/Project-1/">PROJECT</a>
 
 <h2>Home Screen</h2>
 
