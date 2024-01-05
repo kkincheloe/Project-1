@@ -187,38 +187,31 @@ html {
         margin: 0 auto; 
     }
     .personal {
-        /* Adjust the width and margin for the about-me and personal sections */
-        width: 100%; /* Full width */
+        width: 100%; 
         margin: 10px 0;
     }
     .text {
-        /* Adjust text alignment and margin */
         text-align: justify;
         margin: 5px;
     }
     .header {
-        /* Adjust header margin */
         margin: 20px 0;
     }
     .gtkm {
-        /* Adjust "Get To Know Me" section for smaller screens */
         font-size: 24px;
         width: auto;
         margin: 10px;
     }
     .dogs {
-        /* Adjust dogs image size and layout */
         width: 150px;
         height: 200px;
         float: none;
-        margin: 0 auto; /* Centering the image */
+        margin: 0 auto; 
     }
     .insta-button, .linkedin-button, .github-button, .facebook-button {
-        /* Adjust social media buttons for smaller screens */
-        float: none;
         display: block;
         margin: 5px auto;
-        width: 90%; /* Make buttons wider */
+        width: 90%; 
     }
     .about-me {
         width: auto;
