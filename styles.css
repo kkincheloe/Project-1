@@ -169,3 +169,54 @@ html {
     margin-right: 10px;
 }
 
+
+@media only screen and (max-width: 700px) {
+    body {
+        margin: 10px;
+        padding: 10px;
+    }
+    nav {
+        margin: 10px 0;
+    }
+    .title, .bio {
+        font-size: 20px;
+    }
+    .profile-img {
+        width: 80px;
+        height: 135px;
+        margin: 0 auto; 
+    }
+    .personal {
+        width: 100%; 
+        margin: 10px 0;
+    }
+    .text {
+        text-align: justify;
+        margin: 5px;
+    }
+    .header {
+        margin: 20px 0;
+    }
+    .gtkm {
+        font-size: 24px;
+        width: auto;
+        margin: 10px;
+    }
+    .dogs {
+        width: 150px;
+        height: 200px;
+        float: none;
+        margin: 0 auto; 
+    }
+    .insta-button, .linkedin-button, .github-button, .facebook-button {
+        display: block;
+        margin: 5px auto;
+        width: 90%; 
+    }
+    .about-me {
+        width: auto;
+        margin: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+}
