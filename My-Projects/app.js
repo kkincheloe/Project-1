@@ -15,13 +15,17 @@ const combos = [
 let board;
 let turn;
 let winner;
+let xWins = 0;
+let oWins = 0;
 
-const playerOne = $('#playerOne')
-const playerTwo = $('#playerTwo')
 
 const restartButton = document.getElementById('restartButton')
 
 const boardEl = document.getElementById("board");
+
+const playAgain = document.getElementById('playAgain');
+
+playAgain.addEventListener("click", init);
 
 boardEl.addEventListener("click", handleClick);
 
@@ -32,7 +36,10 @@ function init() {
     board = [null, null, null, null, null, null, null, null, null];
     turn = 1
     winner = null;
+    xWins = 0;
+    oWins = 0;
     render()
+    playAgain.style.display = 'none';
 }
 
 function handleClick(evt) {
@@ -54,25 +61,40 @@ function render() {
             box.innerHTML = '';
         }
     } 
-}
 
-function checkWinner() {
+const gameStatus = document.getElementById("game-status");
+    if (winner === "TIE GAME!") {
+        gameStatus.innerHTML = "tie!";
+    } else if (winner) {
+        gameStatus.innerHTML = `${LOOKUP[winner]} wins the game!`;
+    } else {
+        gameStatus.innerHTML = `Current turn: ${LOOKUP[turn]}`;
+    } if (winner) {
+        playAgain.style.display = 'block';
+    }
 
-    for (let i= 0; i < combos.length; i++) {
-       
-        sum = Math.abs(board[combos[i][0]] + board[combos[i][1]] + board[combos[i][2]]);
-        if (sum === 3) return board[combos[i][0]];
+    document.getElementById("x-wins").textContent = xWins; 
+    document.getElementById("o-wins").textContent = oWins;    
+}    
+    function checkWinner() {
+
+        for (let i= 0; i < combos.length; i++) {
+           
+            sum = Math.abs(board[combos[i][0]] + board[combos[i][1]] + board[combos[i][2]]);
+            if (sum === 3) {
+                const winner = board[combos[i][0]];
+                if (winner === 1) {
+                    xWins++;
+                } else {
+                    oWins ++;
+                }
+                return winner;
+            }
+        }
+    
+        if (!board.includes(null)) return "TIE GAME!";
+    
+        return null
         
     }
 
-    if (!board.includes(null)) return "TIE GAME!";
-
-    return null;
-
-}
-
-let outcome
-if (playerOne === playerTwo) {
-    stats.ties++
-    outcome = 'cat game'
-}
