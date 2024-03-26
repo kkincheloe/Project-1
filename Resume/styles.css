@@ -1,5 +1,13 @@
-.button {
+.resume-button {
+    a {
     font-size: 32px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    }
 }
 
 p {
@@ -13,7 +21,27 @@ body {
     height: 100%;
 }
 
-button {
-    cursor: pointer;
-    height: 30px;
+nav {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
 }
+
+nav a button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+nav a button:hover {
+    background-color: #0056b3;
+}
+
